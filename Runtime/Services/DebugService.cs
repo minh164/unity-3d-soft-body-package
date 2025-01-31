@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugService
+namespace Sola164.SoftBody.Services
+{
+    public class DebugService
 {
     public void DebugVertices(Vector3[] vertices)
     {
@@ -183,4 +185,6 @@ public class DebugService
             }
         }
     }
+}
+
 }

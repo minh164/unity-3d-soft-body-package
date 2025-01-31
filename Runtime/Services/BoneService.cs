@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sola164.SoftBody;
 using UnityEngine;
 
-public class BoneService
+namespace Sola164.SoftBody.Services
+{
+    public class BoneService
 {
     private SoftBody _symbiote;
     private GameObject[] _bones = new GameObject[]{};
@@ -269,4 +272,5 @@ public class BoneService
             _rend.bones[i] = bone.transform;
         }
     }
+}
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class VertexService
+namespace Sola164.SoftBody.Services
+{
+    public class VertexService
 {
     private Mesh _mesh;
 
@@ -77,4 +79,6 @@ public class VertexService
 
         _mesh.vertices = vectors;
     }
+}
+
 }

@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoftSphere : SoftCube
+namespace Sola164.SoftBody
+{
+    public class SoftSphere : SoftCube
 {
     // Start is called before the first frame update
     protected override void Start()
@@ -162,4 +164,6 @@ public class SoftSphere : SoftCube
 
         return finalPosition;
     }
+}
+
 }

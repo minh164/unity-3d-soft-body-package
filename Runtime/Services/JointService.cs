@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class JointService
+namespace Sola164.SoftBody.Services
+{
+    public class JointService
 {
     public void CreateJoint(
         GameObject bone,
@@ -50,4 +52,6 @@ public class JointService
 
         return false;
     }
+}
+
 }

@@ -5,7 +5,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SoftCube : SoftBody
+namespace Sola164.SoftBody
+{
+    public class SoftCube : SoftBody
 {
     // Start is called before the first frame update
     protected override void Start()
@@ -417,4 +419,6 @@ public class SoftCube : SoftBody
 
         return dimensions;
     }
+}
+
 }
