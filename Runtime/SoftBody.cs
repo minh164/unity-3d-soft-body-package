@@ -53,7 +53,7 @@ namespace Sola164.SoftBody {
         protected JointService symJoint;
 
         // Start is called before the first frame update
-        protected virtual void Start()
+        protected virtual void Awake()
         {
             gameObject.AddComponent<SkinnedMeshRenderer>();
             rend = gameObject.GetComponent<SkinnedMeshRenderer>();
@@ -192,6 +192,16 @@ namespace Sola164.SoftBody {
                 }
                 cellLayerIndex++;
             }
+        }
+
+        public GameObject[] GetBones()
+        {
+            return symBone.GetBones();
+        }
+
+        public GameObject GetCentroidCell()
+        {
+            return symBone.GetBoneByIndex(cells[0]);
         }
     }
 }
