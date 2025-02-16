@@ -73,8 +73,6 @@ namespace Sola164.SoftBody
         float forwardPos = forward / 2 * -1;
         int forwardStart = vertexNumber * -1;
 
-        int[][] quadList = new int[vertexNumber * 2 + 1][];
-        int quadIndex = 0;
         for (int i = forwardStart; i <= vertexNumber; i++) {
             // Only generate outside quads (exclude inside ones).
             if (
@@ -92,7 +90,7 @@ namespace Sola164.SoftBody
                 isOutside = true;
             }
 
-            quadList[quadIndex] = CreateQuadCells(width, height, forwardPos, side, isOutside);
+            CreateQuadCells(width, height, forwardPos, side, isOutside);
             int[] connections = CreateQuadConnections(
                 horizontalVertexNumber * 2 + 1,
                 verticalVertexNumber * 2 + 1
@@ -103,11 +101,6 @@ namespace Sola164.SoftBody
             }
             
             forwardPos += spacePerForward;
-            quadIndex++;
-        }
-
-        if (! onlyOutsideQuads) {
-            SetCellLayers(quadList);
         }
     }
 
