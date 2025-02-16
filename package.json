@@ -2,5 +2,12 @@
     "name": "com.sola164.3dsoftbody",
     "version": "1.1.0",
     "description": "A Unity package for create soft object can be deformable",
-    "displayName": "3D Soft Body"
+    "displayName": "3D Soft Body",
+    "samples": [
+        {
+            "displayName": "Demo scene for Soft Body",
+            "description": "Demo scene for Soft Body",
+            "path": "Samples/DemoScenes"
+        }
+    ]
 }
