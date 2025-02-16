@@ -31,8 +31,6 @@ namespace Sola164.SoftBody {
         [SerializeField]
         protected float damper = 0.2f;
         [SerializeField]
-        protected bool isUpdateWhenOffscreen = true;
-        [SerializeField]
         public bool isRelativePosition = false;
         [SerializeField]
         public float relativePositionValue = 0.05f;
@@ -44,6 +42,7 @@ namespace Sola164.SoftBody {
         // Each cell includes: key is vertex index and value is bone index.
         protected Dictionary<int, int> cells = new Dictionary<int, int>{};
         protected SkinnedMeshRenderer rend;
+        protected bool isUpdateWhenOffscreen = true;
         protected Mesh mesh;
         protected BoneService symBone;
         protected VertexService symVertex;
@@ -53,8 +52,15 @@ namespace Sola164.SoftBody {
         // Start is called before the first frame update
         protected virtual void Awake()
         {
+            // Create Skinned Mesh.
             gameObject.AddComponent<SkinnedMeshRenderer>();
             rend = gameObject.GetComponent<SkinnedMeshRenderer>();
+
+            // Create Rigid Body for main object.
+            gameObject.AddComponent<Rigidbody>();
+            // Make sure Rigid Body is kinematic and updateWhenOffscreen of renderer is ON to
+            // avoid renderer is not felt from main object.
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
             mesh = new Mesh();
             GameObject[] bones = new GameObject[]{};

@@ -20,6 +20,9 @@ namespace Sola164.SoftBody
 
     protected override void Create()
     {
+        // Ensure using relative positions on Sphere.
+        isRelativePosition = true;
+        
         // Add Center Cell.
         CreateCell(Vector3.zero, "0");
 
